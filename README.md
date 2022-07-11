@@ -1,4 +1,4 @@
-# DMarketItemsParser
+# DMarketItemsParser (DMarket API Wrapper)
 Allows you to parse data about items listed on the dmarket exchange from games (csgo, dota 2, team fortress 2, rust) according to the specified parameters
 
 # Quick start
@@ -6,7 +6,7 @@ Folder `src` contains the `dmarket.py` file, there are class `DMarketItemsParser
 This folder also contains the `parameters.py` file, there are dataclass `ParametersModel` which, using pydantic, allows you to conveniently set the necessary filters for parsing items.
 
 * ### About `parameters.py`
-  * #### This file contains dataclass `ParametersModel`, which will later act as an argument for the parser class functions. This file contains dataclass 1, which will later act as an argument for the parser class functions. Contains many filters. Validation allows you to avoid any errors and easily correct existing ones.
+  * #### This file contains dataclass `ParametersModel`, which will later act as an argument for the parser class functions. Contains many filters. Validation allows you to avoid any errors and easily correct existing ones.
   * #### Contains filters:
     * `gameTitle`: Must contain one of the values `['csgo', 'dota2', 'teamfortress2', 'rust']`
     * `orderBy`: Must contain one of the values `['best_deals', 'best_discount', 'updated', 'price']`
