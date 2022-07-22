@@ -3,7 +3,7 @@ from typing import Literal
 from pydantic import BaseModel, Field, validator, root_validator
 
 
-class ParametersModel(BaseModel):
+class DmarketParametersModel(BaseModel):
     gameTitle: Literal['csgo', 'dota2', 'teamfortress2', 'rust']
     orderBy: Literal['best_deals', 'best_discount', 'updated', 'price']
     orderDir: Literal['asc', 'desc'] # order directory, asc - ascending, desc - descending
@@ -30,6 +30,7 @@ class ParametersModel(BaseModel):
     def less_than_two_decimals(cls, v):
         if len(str(v).split('.')[1]) > 1:
             raise AttributeError('Must be less than two decimals')
+
         return v
 
     # Here, dollars are converted to cents

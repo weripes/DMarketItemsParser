@@ -1,12 +1,12 @@
-# DMarketItemsParser (DMarket API Wrapper)
+# PyDmarket (DMarket API Wrapper)
 Allows you to parse data about items listed on the dmarket exchange from games (csgo, dota 2, team fortress 2, rust) according to the specified parameters
 
 # Quick start
-Folder `src` contains the `dmarket.py` file, there are class `DMarketItemsParser` with functions for convenient parsing of items and getting them in the form of a dictionary.
-This folder also contains the `parameters.py` file, there are dataclass `ParametersModel` which, using pydantic, allows you to conveniently set the necessary filters for parsing items.
+Folder `src` contains the `dmarket.py` file, there are class `PyDmarket` with functions for convenient parsing of items and getting them in the form of a dictionary.
+This folder also contains the `parameters.py` file, there are dataclass `DmarketParametersModel` which, using pydantic, allows you to conveniently set the necessary filters for parsing items.
 
 * ### About `parameters.py`
-  * #### This file contains dataclass `ParametersModel`, which will later act as an argument for the parser class functions. Contains many filters. Validation allows you to avoid any errors and easily correct existing ones.
+  * #### This file contains dataclass `DmarketParametersModel`, which will later act as an argument for the parser class functions. Contains many filters. Validation allows you to avoid any errors and easily correct existing ones.
   * #### Contains filters:
     * `gameTitle`: Must contain one of the values `['csgo', 'dota2', 'teamfortress2', 'rust']`
     * `orderBy`: Must contain one of the values `['best_deals', 'best_discount', 'updated', 'price']`
@@ -22,11 +22,11 @@ This folder also contains the `parameters.py` file, there are dataclass `Paramet
 * ### About `dmarket.py`
   * #### Function `parse_items`
       This function parse items.
-      Accepts as argument class of type `ParametersModel` with the given parameters and return dict with items
+      Accepts as argument class of type `DmarketParametersModel` with the given parameters and return dict with items
 
-  * #### Function `format_parameters_to_url_path`:
+  * #### Function `__format_parameters_to_url_path`:
       The function is mostly needed to be used by previous function.
-      Like the previous function, accepts as argument class of type `ParametersModel` with the given parameters and return the path for the dmarket API domain
+      Like the previous function, accepts as argument class of type `DmarketParametersModel` with the given parameters and return the path for the dmarket API domain
       
  # How to use?
  * ### See `example1.py` and `example2.py`
